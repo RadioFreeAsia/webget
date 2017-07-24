@@ -1,0 +1,5 @@
+The is the INSTALL file for the 'webget' package.
+
+Configure invocation for RHEL 7:
+./configure --libexecdir=/var/www/html/webget --sysconfdir=/etc/httpd/conf.d
+

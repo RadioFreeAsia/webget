@@ -1,0 +1,52 @@
+Name:		webget
+Version:	@VERSION@
+Release:	@RPM_RELEASE@%{?dist}
+Summary:	Micro web site for exporting Rivendell audio
+License:	GPLv2
+Source:		%{name}-%{version}.tar.gz
+BuildRoot:	%{_tmppath}/%{name}-%{version}-build
+Requires:       httpd python rivendell
+
+%description
+A micro web site for exporting Rivendell audio at Radio Free Asia.
+
+
+%prep
+
+
+%setup -q
+%configure --libexecdir=@libexecdir@ --sysconfdir=@sysconfdir@
+
+
+%install
+rm -rf $RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT
+
+
+%clean
+rm -rf %{buildroot}
+
+
+%post
+systemctl restart httpd
+
+
+%postun
+systemctl restart httpd
+
+
+%files
+%defattr(-,root,root)
+@libexecdir@/webget.html
+@libexecdir@/webget.js
+@libexecdir@/webget.py
+@libexecdir@/webget.pyc
+@libexecdir@/webget.pyo
+@sysconfdir@/webget.conf
+%doc COPYING
+%doc README
+
+
+%changelog
+* Mon Jul 24 2017 Fred Gleason <gleasonf@rfa.org>
+-- Initial packaging.
