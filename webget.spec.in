@@ -37,6 +37,7 @@ systemctl restart httpd
 
 %files
 %defattr(-,root,root)
+@libexecdir@/rfa_logo.png
 @libexecdir@/webget.html
 @libexecdir@/webget.js
 @libexecdir@/webget.py

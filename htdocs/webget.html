@@ -7,8 +7,12 @@
     <form method="get" action="webget.py" enctype="application/x-www-form-urlencoded">
       <table cellpadding="0" cellspacing="2" border="0">
 	<tr>
-	  <td cellspan="2"><strong>RFA Webget</strong></td>
+	  <td cellspan="2"><img src="rfa_logo.png" border="0"></td>
 	</tr>
+	<tr>
+	  <td cellspan="2"><strong>Get audio from Rivendell</strong></td>
+	</tr>
+	<tr><td colspan="2"><hr></td></tr>
 	<tr>
 	  <td>Cart Title:</td>
 	  <td><input type="text" name="title" size="40" maxlength="255"></td>
@@ -20,12 +24,12 @@
 	      <option value="8000">8000 samples/sec</option>
 	      <option value="11025">11025 samples/sec</option>
 	      <option value="12000">12000 samples/sec</option>
-	      <option value="16000">16000 samples/sec</option>
+	      <option value="16000" selected>16000 samples/sec</option>
 	      <option value="22050">22050 samples/sec</option>
 	      <option value="24000">24000 samples/sec</option>
 	      <option value="32000">32000 samples/sec</option>
 	      <option value="44100">44100 samples/sec</option>
-	      <option value="48000" selected>48000 samples/sec</option>
+	      <option value="48000">48000 samples/sec</option>
 	    </select>
 	  </td>
 	</tr>
@@ -46,6 +50,7 @@
 	  <td>Bit Rate:</td>
 	  <td>
 	    <select name="bitrate" id="bitrate">
+	      <option value="16000" selected>16 kbit/sec</option>
 	      <option value="32000">32 kbit/sec</option>
 	      <option value="64000">64 kbit/sec</option>
 	      <option value="128000">128 kbit/sec</option>

@@ -19,18 +19,21 @@
 
 install-exec-local:	
 	mkdir -p $(DESTDIR)@libexecdir@
+	cp rfa_logo.png $(DESTDIR)@libexecdir@/
 	cp webget.html $(DESTDIR)@libexecdir@/
 	cp webget.js $(DESTDIR)@libexecdir@/
 	cp webget.py $(DESTDIR)@libexecdir@/
 
 uninstall-local:	
+	rm -f $(DESTDIR)@libexecdir@/rfa_logo.png
 	rm -f $(DESTDIR)@libexecdir@/webget.html
 	rm -f $(DESTDIR)@libexecdir@/webget.js
 	rm -f $(DESTDIR)@libexecdir@/webget.py
 	rm -f $(DESTDIR)@libexecdir@/webget.pyc
 	rm -f $(DESTDIR)@libexecdir@/webget.pyo
 
-EXTRA_DIST = webget.html\
+EXTRA_DIST = rfa_logo.png\
+             webget.html\
              webget.js\
              webget.py
 
